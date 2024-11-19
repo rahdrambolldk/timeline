@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Morphing Dots</title>
+  <style>
+    /* General Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background-color: #f3f3f3;
+    }
+
+    /* Main Container */
+    .timeline-container {
+      position: relative;
+      width: 500px;
+      height: 1000px;
+      background: url('road-background-v1.jpeg') center/cover no-repeat;
+      margin: 0 auto;
+      border: 2px solid #ccc;
+    }
+
+    /* Morphing Dot Styling */
+    .timeline-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+      font-size: 0;
+      font-weight: bold;
+      cursor: pointer;
+      border: 3px solid white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      overflow: hidden;
+      will-change: transform, width, height, box-shadow;
+    }
+
+    .timeline-dot:hover {
+      width: 200px; /* Fixed width for consistent alignment */
+      height: auto; /* Auto height to accommodate text wrapping */
+      max-width: 200px; /* Limit box width */
+      border-radius: 15px; /* Rounded corners */
+      font-size: 14px; /* Make text visible */
+      line-height: 1.5; /* Improve text readability */
+      text-align: center;
+      padding: 10px;
+      transform: translateX(-50%) translateY(-50%); /* Center the box over the original dot */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: width 0.4s ease, height 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* Delay the appearance of text */
+    .timeline-dot span {
+      opacity: 0;
+      transition: opacity 0.4s ease 0.4s; /* Delay opacity change until the animation ends */
+    }
+
+    .timeline-dot:hover span {
+      opacity: 1; /* Text becomes visible after the animation */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="timeline-container">
+    <!-- Dots with Exact X-Axis Positions -->
+    <div class="timeline-dot" style="top: 10%; left: 222px;" data-info="Milestone 9"><span>Future plans: AI on TEE, improved collaboration spaces, competitions, challenges, and more to come... Stay tuned!</span></div>
+    <div class="timeline-dot" style="top: 20%; left: 147px;" data-info="Milestone 8"><span>TEE 2.0 releases! Complete rework of the homepage, service sites, and more.</span></div>
+    <div class="timeline-dot" style="top: 30%; left: 125px;" data-info="Milestone 7"><span>Beginning of Content Implementation 1st Heat. Begun in july, but continued throughout the year.</span></div>
+    <div class="timeline-dot" style="top: 40%; left: 203px;" data-info="Milestone 6"><span>Development of Minimum Viable Product Roadmap for Services (MVP) is initialized</span></div>
+    <div class="timeline-dot" style="top: 50%; left: 289px;" data-info="Milestone 5"><span>TEE Service Owner network goes live. Implementation phase #2 takes speed, as most content is being brought to TEE</span></div>
+    <div class="timeline-dot" style="top: 60%; left: 300px;" data-info="Milestone 4"><span>TEE goes live for the entirety of Ramboll. Implementation phase #1 is initialized.</span></div>
+    <div class="timeline-dot" style="top: 70%; left: 258px;" data-info="Milestone 3"><span>First major release goes live. All department drives are being transferred, and access management is under development.</span></div>
+    <div class="timeline-dot" style="top: 80%; left: 193px;" data-info="Milestone 2"><span>Beta test of TEE begins.</span></div>
+    <div class="timeline-dot" style="top: 90%; left: 134px;" data-info="Milestone 1"><span>First idea of TEE is established. Concept is still under development.</span></div>
+  </div>
+</body>
+</html>
